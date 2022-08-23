@@ -1,8 +1,10 @@
 package com.example.p1springboot.config;
 
+import com.example.p1springboot.entities.Category;
 import com.example.p1springboot.entities.Order;
 import com.example.p1springboot.entities.User;
 import com.example.p1springboot.entities.enums.OrderStatus;
+import com.example.p1springboot.repositories.CategoryRepository;
 import com.example.p1springboot.repositories.OrderRepository;
 import com.example.p1springboot.repositories.UserRepository;
 import org.aspectj.weaver.ast.Or;
@@ -24,8 +26,18 @@ public class TestConfig implements CommandLineRunner {
     @Autowired
     private OrderRepository orderRepository;
 
+    @Autowired
+    private CategoryRepository categoryRepository;
+
     @Override
     public void run(String... args) throws Exception {
+
+        Category cat1 = new Category(null, "Electronics");
+        Category cat2 = new Category(null, "Books");
+        Category cat3 = new Category(null, "Computers");
+
+        categoryRepository.saveAll(Arrays.asList(cat1, cat2, cat3));
+
         User u1 = new User(null, "Maria Brown", "maria@gmail.com", "988888888", "123456");
         User u2 = new User(null, "Alex Green", "alex@gmail.com", "977777777", "123456");
 
