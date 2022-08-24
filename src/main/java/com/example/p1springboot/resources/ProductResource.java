@@ -1,9 +1,7 @@
 package com.example.p1springboot.resources;
 
 import com.example.p1springboot.entities.Product;
-import com.example.p1springboot.entities.User;
 import com.example.p1springboot.services.ProductService;
-import com.example.p1springboot.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
