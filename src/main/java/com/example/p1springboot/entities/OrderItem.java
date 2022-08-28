@@ -10,7 +10,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "order_item")
+@Table(name = "`order_item`")
 public class OrderItem implements Serializable {
 
     @EmbeddedId
